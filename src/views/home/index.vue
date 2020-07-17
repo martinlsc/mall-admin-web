@@ -433,6 +433,7 @@
   }
 
   .out-border {
+    display: none;
     border: 1px solid #DCDFE6;
   }
 
@@ -441,6 +442,7 @@
     border: 1px solid #DCDFE6;
   }
   .mine-layout {
+    display: none;
     position: absolute;
     right: 140px;
     top: 107px;
