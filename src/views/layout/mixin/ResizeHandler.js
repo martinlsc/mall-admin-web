@@ -22,4 +22,20 @@ export default {
       store.dispatch('CloseSideBar', { withoutAnimation: true })
     }
   },
+  methods: {
+    isMobile() {
+      const rect = body.getBoundingClientRect()
+      return rect.width - RATIO < WIDTH
+    },
+    resizeHandler() {
+      if (!document.hidden) {
+        const isMobile = this.isMobile()
+        store.dispatch('ToggleDevice', isMobile ? 'mobile' : 'desktop')
+
+        if (isMobile) {
+          store.dispatch('CloseSideBar', { withoutAnimation: true })
+        }
+      }
+    }
+  }
 }
